@@ -54,7 +54,7 @@ class ChatViewController:UITableViewController,UITextViewDelegate {
     func getInstence(){
         
     }
-  
+    
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         (AppDelegate.delegate as! AppDelegate).pageCondition=0
@@ -134,7 +134,7 @@ class ChatViewController:UITableViewController,UITextViewDelegate {
         //声音
         localNotification.soundName = UILocalNotificationDefaultSoundName
         //额外信息
-//        localNotification.userInfo = ["ItemID":itemID]
+        //        localNotification.userInfo = ["ItemID":itemID]
         UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
     }
     //取消通知消息
@@ -227,11 +227,11 @@ class ChatViewController:UITableViewController,UITextViewDelegate {
                     }
                     
                     dispatch_async(dispatch_get_main_queue(),{
-//                        self.scheduleNotification(12345)
+                        //                        self.scheduleNotification(12345)
                         self.tableView.reloadData()
                         self.setPageData()
                         self.tableViewScrollToBottomAnimated(true)
-
+                        
                     })
                 }
             }
@@ -275,14 +275,16 @@ class ChatViewController:UITableViewController,UITextViewDelegate {
                     let json = JSON(data:result.text!.dataUsingEncoding(NSUTF8StringEncoding)!)
                     let resultArray=json["content"].dictionary!
                     
+                    
                     var msg:MessageChange=MessageChange()
+                    
                     msg.id=resultArray["id"]!.number
+                    msg.contentKey=resultArray["contentKey"]!.string
+                    msg.chatContents=resultArray["chatContents"]!.string
+                    msg.type=resultArray["type"]!.string
                     msg.readStatus=resultArray["readStatus"]!.string
                     msg.time=resultArray["time"]!.number
-                    msg.contentKey=resultArray["contentKey"]!.string
-                    msg.type=resultArray["type"]!.string
-                    msg.messageType=resultArray["messageType"]!.string
-                    msg.chatContents=resultArray["chatContents"]!.string
+                    
                     
                     self.msgChanges.append(msg)
                     
@@ -304,7 +306,7 @@ class ChatViewController:UITableViewController,UITextViewDelegate {
                         self.tableViewScrollToBottomAnimated(true)
                         
                         self.setPageData()
-
+                        
                     })
                 }
             }
@@ -383,7 +385,7 @@ class ChatViewController:UITableViewController,UITextViewDelegate {
                         self.tableView.reloadData()
                         self.setPageData()
                         self.refreshControl!.endRefreshing()
-
+                        
                         self.tableViewScrollToBottomAnimated(true)
                         
                     })
@@ -552,7 +554,7 @@ class ChatViewController:UITableViewController,UITextViewDelegate {
         format.dateFormat="yyyy年MM月dd日 HH:mm:ss"
         
         return format.stringFromDate(date)
-
+        
         
     }
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
