@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="MDo-Lv-lrm">
+            <objects>
+                <viewController storyboardIdentifier="fiveonefive_main" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DrX-cb-MzQ" customClass="ViewController" customModule="与牛共舞" colorLabel="IBBuiltInLabel-Red" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="23m-6C-5Uv"/>
+                        <viewControllerLayoutGuide type="bottom" id="RY7-Ea-Kr1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="grN-bq-AJh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IjS-fA-17d" userLabel="1">
+                                <connections>
+                                    <segue destination="Z5a-NE-yeo" kind="embed" id="niD-QV-yST"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aGD-E6-CT0" userLabel="2">
+                                <connections>
+                                    <segue destination="ptC-cl-7Mx" kind="embed" id="Xsa-Qg-2cN"/>
+                                </connections>
+                            </containerView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LNC-cD-fwQ">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="ar3-ap-zWL"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="行情"/>
+                                    <segment title="自选"/>
+                                </segments>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="indexChanged:" destination="DrX-cb-MzQ" eventType="valueChanged" id="M2D-JD-eAj"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="LNC-cD-fwQ" firstAttribute="top" secondItem="23m-6C-5Uv" secondAttribute="bottom" constant="15" id="0Wy-24-ws0"/>
+                            <constraint firstItem="IjS-fA-17d" firstAttribute="width" secondItem="grN-bq-AJh" secondAttribute="width" id="0hR-Ie-saj"/>
+                            <constraint firstItem="aGD-E6-CT0" firstAttribute="top" secondItem="IjS-fA-17d" secondAttribute="top" id="2mO-hP-Gii"/>
+                            <constraint firstItem="IjS-fA-17d" firstAttribute="bottom" secondItem="RY7-Ea-Kr1" secondAttribute="top" id="EHD-ni-Lu5"/>
+                            <constraint firstItem="aGD-E6-CT0" firstAttribute="height" secondItem="IjS-fA-17d" secondAttribute="height" id="LZl-IZ-PG6"/>
+                            <constraint firstItem="IjS-fA-17d" firstAttribute="height" secondItem="grN-bq-AJh" secondAttribute="height" id="Zpa-V2-3c0"/>
+                            <constraint firstItem="IjS-fA-17d" firstAttribute="centerX" secondItem="LNC-cD-fwQ" secondAttribute="centerX" id="dDE-Ys-rQ6"/>
+                            <constraint firstItem="aGD-E6-CT0" firstAttribute="width" secondItem="IjS-fA-17d" secondAttribute="width" id="h2q-VA-E35"/>
+                            <constraint firstItem="aGD-E6-CT0" firstAttribute="leading" secondItem="IjS-fA-17d" secondAttribute="leading" id="mSd-Ey-Pkq"/>
+                            <constraint firstItem="LNC-cD-fwQ" firstAttribute="centerX" secondItem="grN-bq-AJh" secondAttribute="centerX" id="qGQ-9z-txk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="firstView" destination="IjS-fA-17d" id="ycK-uv-DBL"/>
+                        <outlet property="secondView" destination="aGD-E6-CT0" id="8O8-JC-A73"/>
+                        <outlet property="segmentedControl" destination="LNC-cD-fwQ" id="acd-cC-JWE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1OG-me-28W" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-785" y="-195"/>
+        </scene>
+        <!--c1-->
+        <scene sceneID="qqF-xq-Aae">
+            <objects>
+                <viewController id="Z5a-NE-yeo" customClass="c1" customModule="与牛共舞" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1i4-5l-85e"/>
+                        <viewControllerLayoutGuide type="bottom" id="She-bQ-co2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lOZ-Sg-tDh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.066666666669999999" green="0.48627450979999998" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MNa-ZH-pMj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-25" y="-693"/>
+        </scene>
+        <!--c2-->
+        <scene sceneID="rC7-yP-ftB">
+            <objects>
+                <viewController id="ptC-cl-7Mx" customClass="c2" customModule="与牛共舞" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SPt-XE-qdn"/>
+                        <viewControllerLayoutGuide type="bottom" id="UFf-tk-KNf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="en3-v0-4TI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sEE-mr-RYp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-25" y="149"/>
+        </scene>
+        <!--g2-->
+        <scene sceneID="Y8q-VX-69b">
+            <objects>
+                <viewController storyboardIdentifier="secondVC" id="X9h-lY-cv7" customClass="g2" customModule="与牛共舞" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="17K-V0-USZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="s3e-PB-ZI0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KcH-dk-nK2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8to-w2-rDK">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="aDb-Dv-Dy1"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="日"/>
+                                    <segment title="周"/>
+                                    <segment title="月"/>
+                                </segments>
+                                <color key="tintColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="indexChanged:" destination="X9h-lY-cv7" eventType="valueChanged" id="tFz-Iy-t4P"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="s3e-PB-ZI0" firstAttribute="top" secondItem="8to-w2-rDK" secondAttribute="bottom" constant="10" id="cvc-U8-IKl"/>
+                            <constraint firstItem="8to-w2-rDK" firstAttribute="leading" secondItem="KcH-dk-nK2" secondAttribute="leadingMargin" id="g56-nz-U90"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="seg" destination="8to-w2-rDK" id="qMx-eB-dVH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jdM-rV-tJJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-25" y="1482"/>
+        </scene>
+        <!--g1-->
+        <scene sceneID="Rad-pO-wYq">
+            <objects>
+                <viewController storyboardIdentifier="firstVC" id="J4Z-Nt-94C" customClass="g1" customModule="与牛共舞" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3Ma-ta-9gI"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bcj-YH-2GE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="w2R-Xk-7Zo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GdZ-fn-5W4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-25" y="818"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="x0B-AU-WgS">
+            <objects>
+                <pageViewController storyboardIdentifier="pageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" doubleSided="YES" id="bC7-4v-ZCV" customClass="PageViewController" customModule="与牛共舞" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D4M-GI-OyR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-734" y="663"/>
+        </scene>
+    </scenes>
+</document>

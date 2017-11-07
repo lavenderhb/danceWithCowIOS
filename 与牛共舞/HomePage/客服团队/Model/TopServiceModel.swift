@@ -1,0 +1,24 @@
+//
+//  TopServiceModel.swift
+//  与牛共舞
+//
+//  Created by dm on 16/10/8.
+//  Copyright © 2016年 Mac. All rights reserved.
+//
+
+import UIKit
+
+class TopServiceModel: NSObject {
+    
+    var nameLabelUrl : String!
+    var originalId : String!
+    var imageUrl : String!
+    var detailUrl : String!
+    init(dict : NSDictionary) {
+        super.init()
+        nameLabelUrl = dict["name"] as? String
+        imageUrl =  dict["image"] as? String
+        detailUrl = dict["detail_url"] as? String
+        originalId = dict["id"] as? String
+    }
+}
